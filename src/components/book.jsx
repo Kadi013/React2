@@ -1,22 +1,22 @@
 import React from "react";
 import "../App.css";
 
-const book = (props) => {
+const book = ({image, name, person, description, action}) => {
   return (
     <div className="container">
       <div className="imageCont">
-        <img src={props.image} alt={props.name} />
+        <img src={image} alt={name} />
       </div>
-      <h1>{props.name}</h1>
+      <h1>{name}</h1>
       <b>პერსონაჟები</b>
       <ul>
-        <li>{props.person[0]}</li>
-        <li>{props.person[1]}</li>
-        <li>{props.person[2]}</li>
+        <li>{person[0]}</li>
+        <li>{person[1]}</li>
+        <li>{person[2]}</li>
       </ul>
       <h2>აღწერა</h2>
-      <span>{props.description}</span>
-      <button onClick={props.action}>ყიდვა</button>
+      <span>{description}</span>
+      <button onClick={() => action(name)}>ყიდვა</button>
     </div>
   );
 };
